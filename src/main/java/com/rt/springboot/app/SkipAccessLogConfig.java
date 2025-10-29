@@ -17,7 +17,7 @@ public class SkipAccessLogConfig implements Filter {
 
             // Skip logging for prometheus, metrics, or health endpoints
             if (path.matches(".*/actuator/(prometheus|metrics|health).*")) {
-                request.setAttribute("skipAccessLog", Boolean.TRUE);
+                request.setAttribute("skipAccLog", Boolean.TRUE);
             }
 
             chain.doFilter(request, response);
